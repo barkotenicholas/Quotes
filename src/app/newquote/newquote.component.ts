@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-newquote',
+  selector: 'newquote',
   templateUrl: './newquote.component.html',
   styleUrls: ['./newquote.component.css']
 })
