@@ -22,7 +22,8 @@ export class AppComponent {
 
   addNewQuote(quote:Quote){
 
-    
+    quote.downvote = 0;
+    quote.upvote = 0;
     this.quotes.push(quote);
 
   }
@@ -35,5 +36,14 @@ export class AppComponent {
       } 
   }
 
+  upvote(i:number){
+    var goal = this.quotes[i];
+    goal.upvote +=1;
+  }
+  down(i:number){
+    var goal = this.quotes[i];
+    goal.downvote +=1;
+
+  }
 
 }

@@ -13,11 +13,11 @@
         </button>
 
         <div class="d-inline float-end">
-          <i class="fa fa-thumbs-o-up " aria-hidden="true"></i>
+          <i class="fa fa-thumbs-o-up " aria-hidden="true" (click)="upvote(i)" ></i>
           <span> {{ quote.upvote }}</span>
 
 
-          <i class="fa fa-thumbs-o-down" aria-hidden="true"></i>
+          <i class="fa fa-thumbs-o-down" aria-hidden="true " (click)="downvote(i)" ></i>
           <span> {{ quote.downvote}}</span>
         </div>
 

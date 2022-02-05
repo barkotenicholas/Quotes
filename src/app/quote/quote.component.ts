@@ -12,6 +12,9 @@ export class QuoteComponent implements OnInit {
   quotes!: Quote[];
 
   @Output() deleteQuote = new EventEmitter<number>();
+  @Output() up = new EventEmitter<number>();
+  @Output() down = new EventEmitter<number>();
+
   constructor() { }
 
 
@@ -20,6 +23,14 @@ export class QuoteComponent implements OnInit {
 
   removeQuote(index:number){
     this.deleteQuote.emit(index);
+  }
+
+  upvote(index:number){
+    this.up.emit(index);
+  }
+
+  downvote(index:number){
+    this.down.emit(index);
   }
 
 }
