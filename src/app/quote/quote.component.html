@@ -1,14 +1,14 @@
 <div class="container">
     <h1 class="text-center display-4" >List of Quotes</h1>
 
-    <div class="p-5" *ngFor="let quote of quotes">
+    <div class="p-5" *ngFor="let quote of quotes;let i = index">
       <p class="quote">{{ quote.qoute }}</p>
       <p class="text-end">{{ quote.authorsname }}</p>
 
       <p>{{ quote.quoteDate|date }}</p>
 
       <div>
-        <button class="btn btn-sm btn-dark ">
+        <button class="btn btn-sm btn-dark " (click)="removeQuote(i)" >
           remove Quote
         </button>
 

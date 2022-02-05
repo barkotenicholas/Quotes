@@ -26,4 +26,14 @@ export class AppComponent {
     this.quotes.push(quote);
 
   }
+  deleteQuote(i:number){
+
+    let toDelete = confirm(`Are you sure you want to delete ${this.quotes[i].authorsname}?`)
+
+      if (toDelete){
+        this.quotes.splice(i,1)
+      } 
+  }
+
+
 }
