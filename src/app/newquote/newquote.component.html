@@ -1,6 +1,6 @@
 <h1 class="text-center display-4">Add Quote</h1>
     
-<form>
+<form (ngSubmit)="submit() ">
   <div class="form-group">
     <label class="control-label" for="name">
       Publisher Name :
@@ -9,8 +9,13 @@
       <div class="input-group-prepend bg-light">
         <i class="fa fa-user p-3" aria-hidden="true"></i>
       </div>
-      <input class="form-control" id="email" name="email" type="text" />
+      <input required [(ngModel)]="newQuote.authorsname" #authorsname="ngModel" class="form-control" id="authorsname" name="authorsname" type="text" />
     </div>
+
+    <div *ngIf=" authorsname.touched && !authorsname.valid" class=" w-75 m-3 alert alert-danger">
+        Publishers Name is required
+    </div>
+
   </div>
   <div class="form-group">
     <label class="control-label" for="name">
@@ -20,9 +25,11 @@
       <div class="input-group-prepend bg-light">
         <i class="fa fa-user p-3" aria-hidden="true"></i>
       </div>
-      <input class="form-control" id="email" name="email" type="text" />
+      <input required [(ngModel)]="newQuote.publishersname" #publishersname="ngModel" class="form-control" id="publishersname" name="publishersname" type="text" />
     </div>
-    
+    <div *ngIf="publishersname.touched && !publishersname.valid" class=" w-75 m-3 alert alert-danger">
+        Authors Name is required
+    </div>
   </div>
   <div class="form-group">
     <label class="control-label" for="name">
@@ -32,9 +39,11 @@
       <div class="input-group-prepend bg-light">
         <i class="fa fa-quote-left p-3 " aria-hidden="true"></i>
       </div>
-      <textarea class="form-control" aria-label="With textarea"></textarea>
+      <textarea required [(ngModel)]="newQuote.qoute" #qoute="ngModel" id="qoute" name="qoute" class="form-control" aria-label="With textarea"></textarea>
     </div>
-    
+    <div *ngIf="qoute.touched && !qoute.valid" class=" w-75 m-3 alert alert-danger">
+        Quote is required
+    </div>
   </div>
   <div class="form-group">
     <label class="control-label" for="name">
@@ -44,11 +53,13 @@
       <div class="input-group-prepend bg-light">
         <i class="fa fa-calendar p-3" aria-hidden="true"></i>
       </div>
-      <input class="form-control" id="date" name="date" type="date" />
+      <input required [(ngModel)] = "newQuote.quoteDate" #quoteDate="ngModel" class="form-control" id="quoteDate" name="quoteDate" type="date" />
     </div>
-    
+    <div *ngIf="quoteDate.touched && !quoteDate.valid" class=" w-75 m-3 alert alert-danger">
+        Date is required
+    </div>
   </div>
 
-  <button class="btn btn-sm bg-light mt-5 " >Submit Quote</button>
+  <button class="btn btn-sm bg-dark mt-5 text-white" >Submit Quote</button>
 
 </form>

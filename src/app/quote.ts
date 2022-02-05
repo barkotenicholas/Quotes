@@ -2,11 +2,12 @@ export class Quote {
 
   authorsname: string;
   publishersname: string;
-  qoute: string;
   upvote: number;
   downvote: number;
   quoteDate: Date
-  constructor(authorsname: string,publishersname: string,qoute: string,upvote: number,downvote: number,quoteDate:Date) {
+  qoute: string;
+
+  constructor(authorsname: string,publishersname: string, upvote:number,downvote:number ,qoute: string,quoteDate:Date) {
 
     this.authorsname = authorsname;
     this.publishersname = publishersname;

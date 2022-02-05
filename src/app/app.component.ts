@@ -15,8 +15,15 @@ export class AppComponent {
     upvote:1,
     downvote:0,
     qoute:"If you can't explain it to a six year old, you don't understand it yourself. ",
-    quoteDate: new Date(2020,1,1)
+    quoteDate: new Date(2030,3,14)
     
   }
   ]
+
+  addNewQuote(quote:Quote){
+
+    
+    this.quotes.push(quote);
+
+  }
 }
