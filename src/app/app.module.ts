@@ -8,6 +8,7 @@ import { QuoteComponent } from './quote/quote.component';
 import { NewquoteComponent } from './newquote/newquote.component';
 import { DatePipe } from './date.pipe';
 import { QuoteDetailComponent } from './quote-detail/quote-detail.component';
+import { MostvotesDirective } from './mostvotes.directive';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { QuoteDetailComponent } from './quote-detail/quote-detail.component';
     QuoteComponent,
     NewquoteComponent,
     DatePipe,
-    QuoteDetailComponent
+    QuoteDetailComponent,
+    MostvotesDirective
   ],
   imports: [
     BrowserModule,

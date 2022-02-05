@@ -3,25 +3,12 @@
 
     <div class="p-5" *ngFor="let quote of quotes;let i = index">
       <p class="quote">{{ quote.qoute }}</p>
-      <p class="text-end">{{ quote.authorsname }}</p>
-
       <p>{{ quote.quoteDate|date }}</p>
 
-      <div>
-        <button class="btn btn-sm btn-dark " (click)="removeQuote(i)" >
-          remove Quote
-        </button>
+      <button (click)="toggleDetails(i)"class="btn btn-sm  btn-outline-dark"> view more </button>
+      <quote-detail *ngIf='quote.isTrue' [quote]='quote' [index]='i' (down)="downvote($event)" (up)="upvote($event)" (deleteQuote)="removeQuote($event)" ></quote-detail>
 
-        <div class="d-inline float-end">
-          <i class="fa fa-thumbs-o-up " aria-hidden="true" (click)="upvote(i)" ></i>
-          <span> {{ quote.upvote }}</span>
-
-
-          <i class="fa fa-thumbs-o-down" aria-hidden="true " (click)="downvote(i)" ></i>
-          <span> {{ quote.downvote}}</span>
-        </div>
-
-      </div>
+ 
       <hr>
     </div>
 

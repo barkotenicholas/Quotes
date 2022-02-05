@@ -1,1 +1,20 @@
-<p>quote-detail works!</p>
+<div>
+
+    <p>Authors name {{ quote.authorsname }}</p>
+    <p>Publishers name {{ quote.publishersname }}</p>
+    <p>index is {{index}}</p>
+
+    <button class="btn btn-sm btn-dark " (click)="removeQuote(index)" >
+      remove Quote
+    </button>
+
+    <div class="d-inline float-end">
+      <i class="fa fa-thumbs-o-up " aria-hidden="true" (click)="upvote(index)" ></i>
+      <span> {{ quote.upvote }}</span>
+
+
+      <i class="fa fa-thumbs-o-down" aria-hidden="true " (click)="downvote(index)" ></i>
+      <span> {{ quote.downvote}}</span>
+    </div>
+
+  </div>
