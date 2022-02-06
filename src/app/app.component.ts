@@ -24,6 +24,7 @@ export class AppComponent {
 
     quote.downvote = 0;
     quote.upvote = 0;
+    quote.isTrue = false;
     this.quotes.push(quote);
 
   }
