@@ -2,7 +2,7 @@
     <h1 class="text-center display-4" >List of Quotes</h1>
 
     <div class="p-5" *ngFor="let quote of quotes;let i = index">
-      <p  class="quote">{{ quote.qoute }}</p>
+      <p  class="quote" appMostvotes>{{ quote.qoute }}</p>
       <p>{{ quote.quoteDate|date }}</p>
 
       <button (click)="toggleDetails(i)"class="btn btn-sm  btn-outline-dark"> view more </button>
